@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">W03-Calculations</string>
-    <string name="equals">equals</string>
+    <string name="app_name">Simple Calculator</string>
+    <string name="equals">EQUALS</string>
 </resources>

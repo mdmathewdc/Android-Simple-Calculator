@@ -14,14 +14,17 @@ class MainActivity : AppCompatActivity() {
         val number1 = findViewById<EditText>(R.id.number1)
         val number2 = findViewById<EditText>(R.id.number2)
 
+
         val equals = findViewById<Button>(R.id.equals)
+        val answer = findViewById<TextView>(R.id.answer)
         equals.setOnClickListener { _ ->
             val result = add(number1.text.toString(), number2.text.toString())
-            // TODO: show result on the screen
+            // TODO: show result on the
+            answer.text = result.toString()
         }
     }
 
     // adds two numbers together
-    private fun add(number1: String, number2: String) = number1 + number2
+    private fun add(number1: String, number2: String) = number1.toInt() + number2.toInt()
 
 }
