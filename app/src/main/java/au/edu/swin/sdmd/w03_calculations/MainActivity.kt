@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val plus = findViewById<RadioButton>(R.id.plus)
         val minus = findViewById<RadioButton>(R.id.minus)
-        val result
+        var result: Int
 
         val equals = findViewById<Button>(R.id.equals)
         val answer = findViewById<TextView>(R.id.answer)
