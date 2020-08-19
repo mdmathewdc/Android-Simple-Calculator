@@ -3,9 +3,25 @@ package au.edu.swin.sdmd.w03_calculations
 import android.app.PendingIntent.getActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
+    override fun onStop() {
+        super.onStop()
+
+        Log.i("LIFECYCLE","The app has been STOPPED!")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("LIFECYCLE","The app has been RESTARTED!!")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("LIFECYCLE","The app has been DESTROYED!")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
