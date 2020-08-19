@@ -3,25 +3,40 @@ package au.edu.swin.sdmd.w03_calculations
 import android.app.PendingIntent.getActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        Log.i("LIFECYCLE","The app has been STOPPED!")
+        Log.i("LIFECYCLE","STOPPED!")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i("LIFECYCLE","The app has been RESTARTED!!")
+        Log.i("LIFECYCLE","RESUMED!")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("LIFECYCLE","The app has been DESTROYED!")
+        Log.i("LIFECYCLE","DESTROYED!")
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("SAVED VALUE", answer.text.toString())
+        Log.i("LIFECYCLE","SAVED INSTANCE!")
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        answer.text = savedInstanceState.getString("SAVED VALUE")
+        Log.i("LIFECYCLE","RESTORED INSTANCE!")
+        super.onRestoreInstanceState(savedInstanceState)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
